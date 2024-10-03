@@ -1,0 +1,19 @@
+[package]
+name = "nif_btreemap"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+name = "nif_btreemap"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+lazy_static = "1.5.0"
+rustler = "0.34.0"
+
+[profile.release]
+opt-level = 3     # Full optimizations
+debug = true     # No debug info by default
+lto = true        # Enable Link Time Optimization
