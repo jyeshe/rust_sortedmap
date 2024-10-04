@@ -7,13 +7,9 @@ defmodule RustSortedMap.Application do
 
   @impl true
   def start(_type, _args) do
-    map = RustSortedMap.new()
-    IO.inspect(RustSortedMap.insert(map, "1", "2"))
-    IO.inspect(RustSortedMap.get(map, "1"))
-
     children = [
       # Starts a worker by calling: RustSortedMap.Worker.start_link(arg)
-      # {RustSortedMap.Worker, arg}
+      {RustSortedMap.Worker, :all}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
